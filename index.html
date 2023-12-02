@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags defining character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HourGlass</title> <!-- Title of the HTML document -->
+
+    <!-- Internal CSS styles -->
+    <style>
+        /* Styling for the entire page */
+        body {
+          margin: 0; /* Remove default margin */
+          height: 100vh; /* Set the body height to 100% of the viewport height */
+          display: flex; /* Use Flexbox for layout */
+          align-items: center; /* Center items vertically */
+          justify-content: flex-start; /* Align items to the start of the container */
+          background-color: gainsboro; /* Set background color */
+          background-image: url("https://images.pexels.com/photos/792726/pexels-photo-792726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); /* Set background image */
+          background-size: cover; /* Ensure the background image covers the entire area */
+          margin-left: 150px; /* Left margin of 150 pixels */
+        }
+
+        /* Styling for the hourglass loader */
+        .loader {
+          width: 4.3em; /* Width of the loader */
+          height: 9.8em; /* Height of the loader */
+          font-size: 20px; /* Font size */
+          position: relative; /* Positioned relative to its normal position */
+          display: flex; /* Use Flexbox for loader layout */
+          flex-direction: column; /* Arrange elements in a column */
+          align-items: center; /* Center items horizontally */
+          justify-content: space-between; /* Distribute space evenly between items */
+          animation: rotating 2s linear infinite; /* Apply rotation animation */
+        }
+
+        /* Keyframes for the rotating animation */
+        @keyframes rotating {
+          0%, 90% {
+            transform: rotate(0); /* Initial and midway point of rotation */
+          }
+          100% {
+            transform: rotate(0.5turn); /* Complete the rotation */
+          }
+        }
+
+        /* Styling for the sand flow animation */
+        .loader::after {
+          content: ""; /* Empty content */
+          position: absolute; /* Positioned absolutely within its parent */
+          width: 0.2em; /* Width of the sand flow */
+          height: 4.8em; /* Height of the sand flow */
+          background-color: deepskyblue; /* Color of the sand flow */
+          top: 1em; /* Position from the top */
+          animation: flow 2s linear infinite; /* Apply flow animation */
+        }
+
+        /* Keyframes for the sand flow animation */
+        @keyframes flow {
+          10%, 100% {
+            transform: translateY(3.2em); /* Translate the sand downward */
+          }
+        }
+
+        /* Styling for the top and bottom parts of the hourglass */
+        .top,
+        .bottom {
+          width: 3.5em; /* Width of the top and bottom parts */
+          height: 3.5em; /* Height of the top and bottom parts */
+          border-style: solid; /* Border style */
+          border-color: #D9A383; /* Border color */
+          border-width: 0.2em 0.2em 0.6em 0.6em; /* Border width */
+          border-radius: 50% 100% 50% 30%; /* Border radius */
+          position: relative; /* Positioned relative to its normal position */
+          overflow: hidden; /* Hide overflowing content */
+        }
+
+        /* Styling for the top part of the hourglass */
+        .top {
+          transform: rotate(-45deg); /* Rotate the top part */
+        }
+
+        /* Styling for the bottom part of the hourglass */
+        .bottom {
+          transform: rotate(135deg); /* Rotate the bottom part */
+        }
+
+        /* Styling for the sand in the hourglass */
+        .top::before,
+        .bottom::before {
+          content: ""; /* Empty content */
+          position: absolute; /* Positioned absolutely within its parent */
+          width: inherit; /* Inherit width from parent */
+          height: inherit; /* Inherit height from parent */
+          background-color: deepskyblue; /* Color of the sand */
+          animation: 2s linear infinite; /* Apply sand animation */
+        }
+
+        /* Keyframes for the top part of the sand animation */
+        .top::before {
+          border-radius: 0 100% 0 0; /* Border radius for the top part */
+          animation-name: drop-sand; /* Apply drop sand animation */
+        }
+
+        /* Keyframes for the drop sand animation */
+        @keyframes drop-sand {
+          to {
+            transform: translate(-2.5em, 2.5em); /* Translate the sand */
+          }
+        }
+
+        /* Keyframes for the bottom part of the sand animation */
+        .bottom::before {
+          border-radius: 0 0 0 35%; /* Border radius for the bottom part */
+          transform: translate(2.5em, -2.5em); /* Translate the sand */
+          animation-name: fill-sand; /* Apply fill sand animation */
+        }
+
+        /* Keyframes for the fill sand animation */
+        @keyframes fill-sand {
+          to {
+            transform: translate(0, 0); /* Reset sand translation */
+          }
+        }
+      </style>
+</head>
+<body>
+    <!-- The hourglass loader container -->
+    <div class="loader">
+        <!-- Top and bottom parts of the hourglass -->
+        <span class="top"></span>
+        <span class="bottom"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+The provided code outlines the structure and styling for an animated hourglass displayed on a web page. It begins with the declaration of the document type and language used. The HTML file is divided into two primary sections   the head and body.
+
+Within the head section, crucial document information is defined, including character encoding, viewport settings for responsive design, and the page s title. Additionally, internal CSS styles are embedded to govern the visual appearance of elements within the HTML document.
+
+The CSS styles define the webpage  s overall layout, encompassing aspects like setting the background color and image, positioning elements, and specifying animations for the hourglass. These animations, created through keyframes, dictate the rotation and flow of the sand within the hourglass.
+
+Moving to the body section, a container named    loader    is created to house the hourglass. Inside this container, two    span    elements represent the top and bottom parts of the hourglass, forming the visual structure of the animated hourglass loader.
+
+Finally, the closing tags mark the conclusion of the HTML document, signifying the end of the body and html sections. Overall, this code structures the webpage and defines the styles and animations necessary to display an engaging hourglass loader in a web browser.
+
+Here are some CSS properties and their descriptions  
+
+Margin   Determines the space outside an element.
+Height   Specifies the vertical size of an element.
+Width   Defines the horizontal size of an element.
+Font Size   Sets the size of the text within an element.
+Position   Specifies the positioning method for an element in the document.
+Display   Determines the type of box an element generates.
+Flex Direction   Specifies the direction of the flexible items in a container.
+Align Items   Aligns items along the cross axis in a flex container.
+Justify Content   Aligns items along the main axis in a flex container.
+Background Color   Sets the background color of an element.
+Background Image   Defines an image to be used as the background.
+Background Size   Specifies how a background image should be sized. 
+Border Style   Determines the style of the border.
+Border Color   Specifies the color of the border.
+Border Width   Sets the width of the border on all sides of an element.
+Border Radius   Sets the radius of the border corners.
+Overflow   Determines what happens when content overflows its box.
